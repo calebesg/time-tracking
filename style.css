@@ -1,6 +1,7 @@
 :root {
   --blue-900: hsl(226, 43%, 10%);
   --blue-800: hsl(235, 46%, 20%);
+  --blue-700: hsl(236, 41%, 34%);
   --blue-500: hsl(246, 80%, 60%);
   --blue-400: hsl(235, 45%, 61%);
   --blue-200: hsl(195, 74%, 62%);
@@ -63,19 +64,19 @@ main {
   grid-gap: 1.875rem;
 }
 
-.profile {
+.profile--card {
   background-color: var(--blue-800);
   border-radius: 0.875rem;
   overflow: hidden;
 }
 
-.profile .user {
+.user {
   background-color: var(--blue-500);
   padding: 2.125rem 1.875rem;
   border-radius: 0.875rem;
 }
 
-.user .photo {
+.photo {
   width: 5.375rem;
   height: 5.375rem;
   padding: 0.25rem;
@@ -83,7 +84,7 @@ main {
   border-radius: 50%;
 }
 
-.user .info {
+.info {
   margin-top: 2.5rem;
   margin-left: 0.3125rem;
 }
@@ -93,17 +94,17 @@ main {
 }
 
 .info .name {
-  margin-top: 10px;
-  margin-bottom: 3.375rem;
+  margin-top: 0.625rem;
+  margin-bottom: 2rem;
   font-size: 2.375rem;
   font-weight: 300;
 }
 
 nav .menu {
-  padding: 28px 39px 0;
+  padding: 1.75rem 2.4375rem 0;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .menu .menu-item a {
@@ -124,9 +125,96 @@ nav .menu {
 /* TODO LIST */
 /* ======================================================= */
 
-.todo {
+.tracing {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 1fr 1fr;
+  grid-auto-rows: 15.375rem 15.375rem;
   grid-gap: 1.875rem;
+}
+
+.time--card {
+  position: relative;
+  border-radius: 0.875rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.time--card.work--color .image-wrap {
+  background-color: var(--red-200);
+}
+.time--card.play--color .image-wrap {
+  background-color: var(--blue-200);
+}
+.time--card.study--color .image-wrap {
+  background-color: var(--red-400);
+}
+.time--card.exercise--color .image-wrap {
+  background-color: var(--green-200);
+}
+.time--card.social--color .image-wrap {
+  background-color: var(--violet-500);
+}
+.time--card.self-care--color .image-wrap {
+  background-color: var(--orange-200);
+}
+
+.image-wrap {
+  width: 100%;
+  height: 3.75rem;
+  padding-right: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.image-wrap img {
+  width: 3.75rem;
+  margin-top: -0.9375rem;
+  object-fit: contain;
+}
+
+/* CONTENT CARD */
+/* ======================================================= */
+
+.content {
+  width: 100%;
+  height: 12.5rem;
+  margin-top: -1.25rem;
+  padding: 1.5rem;
+  background-color: var(--blue-800);
+  border-radius: 0.875rem;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.content:hover {
+  background-color: var(--blue-700);
+}
+
+.content header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content header .title {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.content .info {
+  margin: 1.5rem 0 0;
+}
+
+.content .info .hours {
+  font-size: 3.5rem;
+  font-weight: 300;
+}
+
+.content .info .last--hours {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 300;
+  margin-top: 0.625rem;
 }
