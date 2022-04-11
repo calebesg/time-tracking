@@ -12,6 +12,54 @@
     />
 
     <title>Frontend Mentor | Time tracking dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
-  <body></body>
+  <body>
+    <main>
+      <h1 class="sr-only">Time tracking</h1>
+
+      <div id="dashboard" class="container">
+        <div class="profile">
+          <figure class="user">
+            <img class="photo" src="./images/image-jeremy.png" alt="jeremy" />
+
+            <figcaption class="info">
+              <small>Report for</small>
+              <p class="name">Jeremy Robson</p>
+            </figcaption>
+          </figure>
+
+          <nav>
+            <ul class="menu">
+              <li class="menu-item">
+                <a href="#">Day</a>
+              </li>
+              <li class="menu-item active">
+                <a href="#">Week</a>
+              </li>
+              <li class="menu-item">
+                <a href="#">Mounth</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <ul class="todo">
+          <li class="todo-item">1 elemento</li>
+          <li class="todo-item">1 elemento</li>
+          <li class="todo-item">1 elemento</li>
+          <li class="todo-item">1 elemento</li>
+          <li class="todo-item">1 elemento</li>
+          <li class="todo-item">1 elemento</li>
+        </ul>
+      </div>
+    </main>
+  </body>
 </html>
