@@ -50,8 +50,7 @@ main {
 .container {
   max-width: 70rem;
   width: 100%;
-  max-height: 520px;
-  height: 32.5rem;
+  max-height: 32.5rem;
 }
 
 /* CARD PROFILE */
@@ -104,6 +103,7 @@ nav .menu {
   padding: 1.75rem 2.4375rem 0;
   display: flex;
   flex-direction: column;
+  font-size: 1.125rem;
   gap: 1.5rem;
 }
 
@@ -181,7 +181,7 @@ nav .menu {
   width: 100%;
   height: 12.5rem;
   margin-top: -1.25rem;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   background-color: var(--blue-800);
   border-radius: 0.875rem;
   transition: background-color 0.3s;
@@ -217,4 +217,63 @@ nav .menu {
   font-size: 1rem;
   font-weight: 300;
   margin-top: 0.625rem;
+}
+
+@media (max-width: 62.5rem) {
+  main {
+    align-items: flex-start;
+  }
+
+  .container {
+    width: 90%;
+    max-height: 100%;
+  }
+
+  #dashboard {
+    margin: 5rem 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .user .info,
+  .user .info .name {
+    margin: 0;
+  }
+
+  .user .info .name {
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  nav .menu {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.75rem 2.4375rem;
+  }
+
+  .tracing {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .time--card .content {
+    height: auto;
+  }
+
+  .time--card .info {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .time--card .info .hours {
+    font-size: 2.4rem;
+  }
 }
