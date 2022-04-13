@@ -117,13 +117,15 @@ const links = document.querySelectorAll('.menu-item');
 ////////////////////////////////////////////////
 // CREATE CARD
 
-const newCard = function (item, timeframe = 'weekly', lable) {
-  const name = item.title.toLowerCase().replaceAll(' ', '-');
+const newCard = function (item, timeframe = 'weekly') {
+  const marker = item.title.toLowerCase().replaceAll(' ', '-');
+  const times = { weekly: 'Week', daily: 'Day', monthly: 'Month' };
+  const timeLower = timeframe.toLowerCase();
 
   return `
-    <li class="time--card ${name}--color">
+    <li class="time--card ${marker}--color">
       <div class="image-wrap">
-        <img src="./images/icon-${name}.svg" alt="" aria-hidden="true" />
+        <img src="./images/icon-${marker}.svg" alt="" aria-hidden="true" />
       </div>
       <div class="content">
         <header>
@@ -134,8 +136,8 @@ const newCard = function (item, timeframe = 'weekly', lable) {
         </header>
 
         <div class="info">
-          <p class="hours">${item.timeframes[timeframe].current}hrs</p>
-          <small class="last--hours">Last ${lable} - ${item.timeframes[timeframe].previous}hrs</small>
+          <p class="hours">${item.timeframes[timeLower].current}hrs</p>
+          <small class="last--hours">Last ${times[timeLower]} - ${item.timeframes[timeLower].previous}hrs</small>
         </div>
       </div>
     </li>
@@ -151,7 +153,7 @@ const updateUI = function (items, timeframe, lable) {
   });
 };
 
-updateUI(items, 'weekly', 'Week');
+updateUI(items);
 
 menu.addEventListener('click', e => {
   if (e.target.classList.contains('link') === false) return;
@@ -163,5 +165,5 @@ menu.addEventListener('click', e => {
 
   link.parentNode.classList.add('active');
 
-  updateUI(items, link.dataset.type, link.textContent);
+  updateUI(items, link.textContent);
 });
